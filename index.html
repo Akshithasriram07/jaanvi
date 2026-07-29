@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A heartfelt journey through memories — an apology to my closest friend." />
+  <title>For You — A Memory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2764;</text></svg>" />
+  <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+<body>
+
+  <!-- ============================================================
+       GLOBAL CANVAS LAYERS (particles, hearts, cursor glow)
+  ============================================================= -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <div id="cursor-glow" aria-hidden="true"></div>
+  <div id="floating-layer" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       PART 1 — OPENING CINEMATIC INTRO
+  ============================================================= -->
+  <section id="intro" class="intro" aria-label="Intro">
+    <div class="intro__bg"></div>
+    <div class="intro__content">
+      <div class="intro__heart" aria-hidden="true">
+        <svg viewBox="0 0 24 24" class="heart-svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#heartGrad)"/><defs><linearGradient id="heartGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF7BA9"/><stop offset="1" stop-color="#9B6FCC"/></linearGradient></defs></svg>
+      </div>
+      <div class="intro__lines">
+        <p class="intro__line">Some stories are too precious to leave untold…</p>
+        <p class="intro__line">This one is for you —</p>
+        <p class="intro__line">my closest friend.</p>
+      </div>
+    </div>
+    <div class="intro__burst" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============================================================
+       MAIN STORY (revealed after intro)
+  ============================================================= -->
+  <main id="story" class="story" aria-hidden="true">
+
+    <!-- ============================================================
+         PART 2 — HERO
+    ============================================================= -->
+    <section id="hero" class="hero section" aria-label="Hero">
+      <div class="hero__aurora"></div>
+      <div class="hero__card glass">
+        <div class="hero__photo-wrap">
+          <!-- Replace with images/hero.jpg -->
+          <img src="C:\Users\AVM SERVICE ZONE\Downloads\januuu\one.jpeg" alt="Two friends silhouetted against a golden sunset" class="hero__photo" loading="eager" />
+          <div class="hero__photo-glow"></div>
+        </div>
+        <div class="hero__text">
+          <p class="hero__eyebrow reveal">A letter in the shape of a journey</p>
+          <h1 class="hero__title reveal">I'm sorry.<br /><span class="hero__title-accent">And I remember everything.</span></h1>
+          <p class="hero__sub reveal">This isn't a website. It's every sunset we shared, every laugh we couldn't stop, and every moment I wish I hadn't let slip away. Scroll gently — this is for you.</p>
+          <div class="hero__actions reveal">
+            <a href="#timeline" class="btn btn--primary" data-scroll>Begin the journey</a>
+            <a href="#letter" class="btn btn--ghost" data-scroll>Read my letter</a>
+          </div>
+        </div>
+      </div>
+      <a href="#timeline" class="scroll-indicator" data-scroll aria-label="Scroll down">
+        <span class="scroll-indicator__text">scroll</span>
+        <span class="scroll-indicator__line"></span>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         PART 3 — JOURNEY TIMELINE
+    ============================================================= -->
+    <section id="timeline" class="timeline section" aria-label="Our journey">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">jaan</p>
+        <h2 class="section__title">Our Journey</h2>
+        <p class="section__lead">A timeline of the moments that built us — each one a stone in the path we walked together.</p>
+      </div>
+      <div class="timeline__rail" aria-hidden="true"><span class="timeline__line"></span></div>
+      <div class="timeline__track">
+
+        <article class="timeline__item reveal" data-side="left">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass">
+            <span class="timeline__date">The Beginning</span>
+            <!-- Replace with images/timeline-1.jpg -->
+            <img src="photos/Screenshot 2026-07-29 194538.png" alt="Two silhouetted figures at sunset by a river" class="timeline__img" loading="lazy" />
+            <h3 class="timeline__card-title">The day we met</h3>
+            <p class="timeline__card-text">Two strangers under one sky. I didn't know yet that this quiet beginning would become the most important story.</p>
+          </div>
+        </article>
+
+        <article class="timeline__item reveal" data-side="right">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass">
+            <span class="timeline__date">MY photographer</span>
+            <img src="photos/Screenshot 2026-07-29 193428.png" alt="Two friends laughing at the beach" class="timeline__img" loading="lazy" />
+            <h3 class="timeline__card-title">you make my heart beat</h3>
+            <p class="timeline__card-text">I never imagined that one conversation would become one of the most beautiful friendships of my life. You entered my world quietly, but your presence changed it forever.</p>
+          </div>
+        </article>
+
+        <article class="timeline__item reveal" data-side="left">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass">
+            <span class="timeline__date">The Adventures</span>
+            <img src="photos/Screenshot 2026-07-29 193835.png" alt="Two friends sharing laughter with a camera" class="timeline__img" loading="lazy" />
+            <h3 class="timeline__card-title">Every road we wandered</h3>
+            <p class="timeline__card-text">We went everywhere and nowhere, and somehow nowhere with you felt like the most beautiful somewhere I'd ever been.</p>
+          </div>
+        </article>
+
+        <article class="timeline__item reveal" data-side="right">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass">
+            <span class="timeline__date">The Quiet Days</span>
+            <img src="photos/Screenshot 2026-07-29 193553.png" alt="Two friends walking on the beach at sunset" class="timeline__img" loading="lazy" />
+            <h3 class="timeline__card-title">When words weren't needed</h3>
+            <p class="timeline__card-text">Some days we just walked. The silence between us was never empty — it was full of everything we already understood.</p>
+          </div>
+        </article>
+
+        <article class="timeline__item reveal" data-side="left">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass">
+            <span class="timeline__date">The Distance</span>
+            <img src="photos/Screenshot 2026-07-29 193956.png" alt="Two friends at sunset by the sea" class="timeline__img" loading="lazy" />
+            <h3 class="timeline__card-title">The space between us</h3>
+            <p class="timeline__card-text">And then came the distance I caused. If I could walk back to that horizon, I'd run the whole way — just to stand beside you again.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PART 4 — PHOTO GALLERY
+    ============================================================= -->
+    <section id="gallery" class="gallery section" aria-label="Photo gallery">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">jaan</p>
+        <h2 class="section__title">Fragments of Us</h2>
+        <p class="section__lead">A mosaic of the moments I hold closest. Click any frame to step inside it.</p>
+      </div>
+      <div class="gallery__masonry" id="galleryGrid">
+        <!-- Replace these src attributes with images/photo1.jpg ... images/photo8.jpg -->
+        <figure class="polaroid reveal" data-caption="The day the sky turned gold for us">
+          <img src="photos/Screenshot 2026-07-29 193307.png" alt="Two friends smiling by the riverside" loading="lazy" />
+          <figcaption>our class room memories</figcaption>
+        </figure>
+        <figure class="polaroid reveal" data-caption="When we laughed until we forgot why">
+          <img src="photos/Screenshot 2026-07-29 193935.png" alt="Two friends laughing together" loading="lazy" />
+          <figcaption>The endless laugh</figcaption>
+        </figure>
+        <figure class="polaroid reveal" data-caption="A quiet afternoon that felt like forever">
+          <img src="photos/Screenshot 2026-07-29 193900.png" alt="Two friends laughing indoors with vintage feel" loading="lazy" />
+          <figcaption>Afternoon light</figcaption>
+        </figure>
+        <figure class="polaroid reveal" data-caption="Coffee that lasted longer than the sun">
+          <img src="photos/Screenshot 2026-07-29 193753.png" alt="Young friends laughing at a coffee shop" loading="lazy" />
+          <figcaption>my cutieee</figcaption>
+        </figure>
+        <figure class="polaroid reveal" data-caption="Barefoot, and free, and yours">
+          <img src="photos/Screenshot 2026-07-29 193357.png" alt="Two friends walking on the beach at sunset" loading="lazy" />
+          <figcaption>classroom fun</figcaption>
+        </figure>
+        <figure class="polaroid reveal" data-caption="We planned a hundred futures that day">
+          <img src="photos/Screenshot 2026-07-29 193918.png" alt="Two friends planning together indoors" loading="lazy" />
+          <figcaption>lovely moments</figcaption>
+        </figure>
+        <figure class="polaroid reveal" data-caption="Lost in the tall grass, found in each other">
+          <img src="photos/Screenshot 2026-07-29 193813.png" alt="Three friends in tall pampas grass" loading="lazy" />
+          <figcaption>Devotiess</figcaption>
+        </figure>
+        <figure class="polaroid reveal" data-caption="The horizon we promised we'd chase">
+          <img src="photos/Screenshot 2026-07-29 194015.png" alt="Two friends enjoying a sunset over the ocean" loading="lazy" />
+          <figcaption>The DAY</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PART 5 — MEMORY NOTES
+    ============================================================= -->
+    <section id="notes" class="notes section" aria-label="Memory notes">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">jaan</p>
+        <h2 class="section__title">Little Things I Kept</h2>
+        <p class="section__lead">I am not really that much posessive but i wanna be like a child with you.</p>
+      </div>
+      <div class="notes__board" id="notesBoard">
+        <button class="note note--1 reveal" data-note="There was a song you hummed whenever you were happy. I still hear it in empty rooms, and it still feels like home.">
+          <span class="note__pin"></span>
+          <span class="note__text">Your happy song…</span>
+        </button>
+        <button class="note note--2 reveal" data-note="The caring i get from you is the most precious thing in my life. I never want to take it for granted.">
+          <span class="note__pin"></span>
+          <span class="note__text">The caring…</span>
+        </button>
+        <button class="note note--3 reveal" data-note="the gossips we shared, the secrets we kept, the laughter that followed — I keep them all in a box marked 'us.'">
+          <span class="note__pin"></span>
+          <span class="note__text">The Gossips</span>
+        </button>
+        <button class="note note--4 reveal" data-note="You taught me that being quiet with someone is its own kind of conversation. I've never stopped being grateful for that lesson.">
+          <span class="note__pin"></span>
+          <span class="note__text">The quiet lesson…</span>
+        </button>
+        <button class="note note--5 reveal" data-note="You forgave me for small things so easily that I forgot forgiveness was a gift. I'm trying not to forget again.">
+          <span class="note__pin"></span>
+          <span class="note__text">How you forgave…</span>
+        </button>
+        <button class="note note--6 reveal" data-note="YOU Are such a person that everyone loves you and I am so lucky to have you in my life.">
+          <span class="note__pin"></span>
+          <span class="note__text">The Kindness</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PART 6 — VIDEO MEMORIES
+    ============================================================= -->
+    <section id="video" class="video-section section" aria-label="Video memories">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">jaan</p>
+        <h2 class="section__title">Moving Memories</h2>
+        <p class="section__lead">Some moments only make sense in motion. Drop your video at <code>videos/memories.mp4</code> and it will play here.</p>
+      </div>
+      <div class="video-player glass reveal" id="videoPlayer">
+        <!-- Replace src with videos/memories.mp4 -->
+        <video id="memoryVideo" playsinline preload="metadata" poster="https://images.pexels.com/photos/27430519/pexels-photo-27430519.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <source src="music/VID_20260729_091908_701.mp4" type="video/mp4" />
+        </video>
+        <div class="video-player__controls">
+          <button class="video-btn" id="videoPlay" aria-label="Play / Pause">
+            <svg viewBox="0 0 24 24" class="icon-play"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 24 24" class="icon-pause" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/></svg>
+          </button>
+          <span class="video-time" id="videoTime">0:00 / 0:00</span>
+          <div class="video-progress" id="videoProgress"><span class="video-progress__fill" id="videoFill"></span></div>
+          <button class="video-btn" id="videoFullscreen" aria-label="Fullscreen">
+            <svg viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4V4zm10 0h6v6h-2V6h-4V4zM4 14h2v4h4v2H4v-6zm14 0h2v6h-6v-2h4v-4z" fill="currentColor"/></svg>
+          </button>
+        </div>
+        <div class="video-fallback" id="videoFallback">
+          <p>Your video will live here.</p>
+          <p class="video-fallback__hint">Add a file named <code>memories.mp4</code> to the <code>videos/</code> folder.</p>
+        </div>
+      </div>
+    </section>
+<!-- ============================================================
+     PART 7 — HANDWRITTEN LETTER
+============================================================= -->
+<section id="letter" class="letter section" aria-label="A letter">
+
+    <div class="section__head reveal">
+        <p class="section__eyebrow">jaan</p>
+        <h2 class="section__title">A Letter, Written From My Heart ❤️</h2>
+        <p class="section__subtitle">
+            Every word here comes from my heart...
+        </p>
+    </div>
+
+    <div class="letter__paper reveal" id="letterPaper">
+
+        <div class="letter__seal" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                    2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                    C13.09 3.81 14.76 3 16.5 3
+                    19.58 3 22 5.42 22 8.5
+                    c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+
+        <div class="letter__body" id="letterBody">
+
+            <h3>💌 My Dearest Jaanu...</h3>
+
+            <p>
+                I really don't know how to start this letter...
+            </p>
+
+            <p>
+                <strong>First of all... I'm really, really sorry.</strong>
+            </p>
+
+            <p>
+                Till today, I never imagined that I would do something like this
+                for any girl in my life.
+                But today, I'm doing it because you mean that much to me.
+            </p>
+
+            <p>
+                The place you hold in my heart is something
+                I can never explain in words.
+            </p>
+
+            <p>
+                What happened today...
+                I still don't understand it myself.
+                I never wanted to hurt you.
+                That slap happened so suddenly,
+                and if I could go back to that one second,
+                I would change it without thinking twice.
+            </p>
+
+            <p>
+                Thank you for staying with me in class.
+                Even when the people I once called my best friends
+                slowly walked away,
+                you stayed.
+                Maybe you don't even know
+                how much that meant to me.
+            </p>
+
+            <p>
+                Sometimes you get angry with me...
+                Sometimes I act possessive...
+                But honestly,
+                I never mean anything seriously.
+                I only tease you,
+                joke around,
+                and try to make everyone laugh.
+            </p>
+
+            <p>
+                There are a few moments
+                when your sudden anger
+                or a few words spoken in front of everyone
+                quietly hurt my little heart.
+                Maybe you had your own reasons.
+                I'm not blaming you.
+                I just wanted you to know
+                how I feel.
+            </p>
+
+            <p>
+                We've been together since <strong>P1</strong>.
+                That's such a long journey.
+                We've shared laughs,
+                silly fights,
+                beautiful memories,
+                and countless moments.
+            </p>
+
+            <p>
+                I don't want one bad moment
+                to erase all of those memories.
+            </p>
+
+            <p>
+                I truly hope
+                this beautiful bond
+                stays with us forever.
+            </p>
+
+            <p>
+                I wish you become successful,
+                achieve every dream,
+                and always keep smiling.
+            </p>
+
+            <p>
+                One small request...
+                Please be open with me.
+                If you're angry,
+                tell me.
+                If I make a mistake,
+                scold me.
+                But please don't stay silent.
+            </p>
+
+            <p>
+                I know you're carrying your own pain.
+                I may never completely understand it,
+                but I'll always pray
+                that life gives you nothing but happiness.
+            </p>
+
+            <p>
+                <strong>
+                    Once again...
+                    I'm truly, deeply sorry, Jaanu.
+                </strong>
+            </p>
+
+            <p>
+                Thank you for every smile.
+                Thank you for every memory.
+                Thank you for simply being YOU.
+            </p>
+
+            <p>
+                <strong>
+                    I love you sooo much...
+                    as my best friend. ❤️
+                </strong>
+            </p>
+
+            <p style="font-size:1.4rem;">
+                Ummmmmaaaaaaa 🤍
+            </p>
+
+            <p style="text-align:right;margin-top:40px;">
+                Forever Yours,<br>
+                <strong>AK 🌸</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ============================================================
+         PART 8 — REASONS
+    ============================================================= -->
+    <section id="reasons" class="reasons section" aria-label="Reasons">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">jaan</p>
+        <h2 class="section__title">Why You Matter</h2>
+        <p class="section__lead">Reasons, in case you ever wondered.</p>
+      </div>
+      <div class="reasons__grid">
+        <article class="reason glass reveal"><span class="reason__num">01</span><h3>You stay</h3><p>When the world walks away, you're the one who pulls up a chair and stays.</p></article>
+        <article class="reason glass reveal"><span class="reason__num">02</span><h3>You listen</h3><p>Not to answer — to understand. That's rarer than you think.</p></article>
+        <article class="reason glass reveal"><span class="reason__num">03</span><h3>You make ordinary days shine</h3><p>Coffee, a walk, a quiet hour — somehow you make them feel like occasions.</p></article>
+        <article class="reason glass reveal"><span class="reason__num">04</span><h3>You forgive</h3><p>Even when no one would blame you for not. Especially then.</p></article>
+        <article class="reason glass reveal"><span class="reason__num">05</span><h3>You believe in me</h3><p>Sometimes more than I believe in myself. That belief has carried me further than you know.</p></article>
+        <article class="reason glass reveal"><span class="reason__num">06</span><h3>You are home</h3><p>No matter how far I drift, you are the place I'm always trying to get back to.</p></article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PART 9 — MUSIC PLAYER
+    ============================================================= -->
+    <section id="music" class="music section" aria-label="Music">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">jaan*AK</p>
+        <h2 class="section__title">Our Soundtrack</h2>
+        <p class="section__lead">Songs that played while we made these memories. Add your own to the <code>music/</code> folder.</p>
+      </div>
+      <div class="music__player glass reveal">
+        <div class="music__disc">
+          <div class="music__disc-inner"></div>
+        </div>
+        <div class="music__info">
+          <p class="music__track" id="musicTitle">Our Song</p>
+          <p class="music__artist" id="musicArtist">Add music/song1.mp3 to begin</p>
+          <div class="music__progress" id="musicProgress"><span class="music__progress-fill" id="musicFill"></span></div>
+          <div class="music__time"><span id="musicCurrent">0:00</span><span id="musicDuration">0:00</span></div>
+        </div>
+        <div class="music__controls">
+          <button class="music-btn" id="musicPrev" aria-label="Previous">
+            <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" fill="currentColor"/></svg>
+          </button>
+          <button class="music-btn music-btn--play" id="musicPlay" aria-label="Play / Pause">
+            <svg viewBox="0 0 24 24" class="icon-play"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 24 24" class="icon-pause" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/></svg>
+          </button>
+          <button class="music-btn" id="musicNext" aria-label="Next">
+            <svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z" fill="currentColor"/></svg>
+          </button>
+        </div>
+        <audio id="musicAudio" preload="metadata" ></audio>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PART 10 — FINAL SCENE
+    ============================================================= -->
+    <section id="final" class="final section" aria-label="Final scene">
+      <canvas id="star-canvas" class="final__stars" aria-hidden="true"></canvas>
+      <div class="final__content">
+        <div class="final__photo-wrap reveal">
+          <!-- Replace with images/final.jpg -->
+          <img src="photos/Screenshot 2026-07-29 194131.png" alt="Two friends silhouetted at sunset in the mountains" class="final__photo" loading="lazy" />
+        </div>
+        <h2 class="final__title reveal">I'm sorry. <span>Thank you.</span></h2>
+        <p class="final__text reveal">Thank you for every chapter we wrote together, and for the ones still waiting to be written. If you'll let me, I'd like to turn the page with you again — slowly, and this time, I won't let go.</p>
+        <div class="final__hearts" aria-hidden="true"></div>
+      </div>
+      <footer class="final__footer">
+        <p>Made with care, for you. <span class="final__heart" aria-hidden="true">&hearts;</span></p>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       LIGHTBOX (gallery)
+  ============================================================= -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous">&#8249;</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+      <figcaption class="lightbox__caption" id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next">&#8250;</button>
+  </div>
+
+  <!-- ============================================================
+       NOTE POPUP
+  ============================================================= -->
+  <div class="note-popup" id="notePopup" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="note-popup__card glass" id="notePopupCard">
+      <button class="note-popup__close" id="notePopupClose" aria-label="Close">&times;</button>
+      <p class="note-popup__text" id="notePopupText"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
